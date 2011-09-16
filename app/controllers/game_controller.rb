@@ -3,6 +3,7 @@ class GameController < ApplicationController
   end
 
   def index
+    @games = Game.all
   end
 
 end

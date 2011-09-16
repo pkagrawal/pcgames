@@ -3,6 +3,9 @@ Pcgames::Application.routes.draw do
 
   get "game/index"
 
+  match 'games/' => 'game#index'
+  match 'games/:id' => 'game#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
