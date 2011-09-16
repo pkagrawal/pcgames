@@ -1,2 +1,14 @@
-<h1>Game#show</h1>
-<p>Find me in app/views/game/show.html.erb</p>
+<h1><%=@game.name%></h1>
+<p><%= @game.description %></p>
+<p>Please do leave some comments about this game!</p>
+<form action="" method="POST">
+  <table>
+  <tr>
+    <td>Username:</td>
+    <td><input name="user_name"/></td>
+  </tr>
+  <tr>
+    <td><input type="submit"></td>
+  </tr>
+  </table>
+</form>
