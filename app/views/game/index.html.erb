@@ -3,6 +3,9 @@
 <p>Please select a game from below to view its details</p>
 <div>
   <% @games.each do |game| %>
-  <div><a href="<%= game.id.to_s%>"><%= game.name %></a></div>
+  <div><a href="game/<%= game.id.to_s%>"><%= game.name %></a></div>
   <% end %>
  </div>
+<div>
+  A game that we don't know about? Please, let us <a href="new">know.</a>
+</div>

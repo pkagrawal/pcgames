@@ -1,15 +1,29 @@
 <h1><%=@game.name%></h1>
 <p><%= @game.description %></p>
+<table>
+  <% unless @existing_comments.blank? %>
+      <tr><thead>Name</thead><thead>Comments</thead></tr>
+      <% @existing_comments.each do |c| %>
+        <tr><td><%= c.user_name %></td><td><%=c.comment_string %></td></tr>
+      <% end %>
+  <% end %>
+</table>
 <p>Please do leave some comments about this game!</p>
-<form action="" method="POST">
-  <table>
-  <tr>
-    <td>Username:</td>
-    <td><input name="user_name"/></td>
-  </tr>
-  <tr>
-    <td><input type="submit"></td>
-  </tr>
-  </table>
-</form>
+<p>
+  <%= form_for (@comment) do |f| %>
+  <div class="field">
+    <%= f.label "Name" %><br />
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label "Comment" %><br />
+    <%= f.text_area :comment_string %>
+    <%= hidden_field_tag :game_id, @game.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Comment" %>
+  </div>
+
+  <%end%>
+</p>
 <a href="/games">Home</a>
