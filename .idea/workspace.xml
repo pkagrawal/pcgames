@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="151933ba-9cef-4e7a-8417-ef9eb182d10f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="151933ba-9cef-4e7a-8417-ef9eb182d10f" name="Default" comment="" />
     <ignored path="pcgames.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +35,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/game/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="10" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1388889">
+            <state line="8" column="45" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1388889">
               <folding />
             </state>
           </provider>
@@ -589,7 +587,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/game/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="10" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1388889">
+        <state line="8" column="45" selection-start="284" selection-end="284" vertical-scroll-proportion="0.1388889">
           <folding />
         </state>
       </provider>
