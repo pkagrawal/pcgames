@@ -1,4 +1,5 @@
 Pcgames::Application.routes.draw do
+
   get "game/show"
 
   get "game/index"
