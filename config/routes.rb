@@ -1,7 +1,7 @@
 Pcgames::Application.routes.draw do
   get "comments/new"
 
-  resources :game, :only=>[:new ]
+  #resources :game, :only=>[:new ]
 
   get "game/show"
 
@@ -12,9 +12,12 @@ Pcgames::Application.routes.draw do
   match 'games/' => 'game#index'
   match 'games/game/:id' => 'game#show'
   match 'game/:id' => 'game#show'
-  match 'games/new' => 'game#new'
+  match 'games/newgame' => 'game#new'
+  match 'newgame' => 'game#new'
   match 'comments' => 'comments#new'
   match 'comments/:id' => 'comments#new'
+  match 'creategame' => 'game#create'
+  match 'games/creategame' => 'game#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

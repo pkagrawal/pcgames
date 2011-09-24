@@ -1,2 +1,21 @@
 <h1>Create a new game</h1>
+Thank you for letting us know about new and upcoming games.
+Please take a moment to provide us with some information about the new game.
 
+<%= form_for(:game, :url => 'creategame') do |f| %>
+   <div class="field">
+    <%= f.label "Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Description" %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label "Genre" %>
+    <%= select :game, :genre_id, options_from_collection_for_select(@genres, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add" %>
+  </div>
+<% end %>

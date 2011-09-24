@@ -11,7 +11,13 @@ class GameController < ApplicationController
   end
 
   def new
+    @game = Game.new
+    @genres = Genre.all#.map{|genre| [genre.name, genre.id]}
+  end
 
+  def create
+    @game = Game.new(params[:game])
+    @game.save
   end
 
 end
