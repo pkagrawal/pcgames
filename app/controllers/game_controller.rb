@@ -1,6 +1,7 @@
 class GameController < ApplicationController
   def show
     @game = Game.find_by_id(params[:id])
+    @genre = Genre.find_by_id(@game.genre_id)
     @comment = Comment.new
     @comment.game_id=params[:id]
     @existing_comments = Comment.find_all_by_game_id(@game.id)

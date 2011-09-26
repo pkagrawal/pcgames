@@ -1,10 +1,11 @@
 <h1><%=@game.name%></h1>
+<h2>Genre: <%= @genre.name %></h2>
 <p><%= @game.description %></p>
 <table>
   <% unless @existing_comments.blank? %>
-      <tr><thead>Name</thead><thead>Comments</thead></tr>
+      <tr><td width="200"><b>Name</b></td><td width="600"><b>Comments</b></td></tr>
       <% @existing_comments.each do |c| %>
-        <tr><td><%= c.user_name %></td><td><%=c.comment_string %></td></tr>
+        <tr><td width="100"><%= c.user_name %></td><td width="300"><%=c.comment_string %></td></tr>
       <% end %>
   <% end %>
 </table>
