@@ -2,7 +2,7 @@
 Thank you for letting us know about new and upcoming games.
 Please take a moment to provide us with some information about the new game.
 
-<%= form_for(:game, :url => 'creategame') do |f| %>
+<%= form_for(:game, :url => create_game_path) do |f| %>
    <div class="field">
     <%= f.label "Name" %><br />
     <%= f.text_field :name %>
@@ -20,4 +20,4 @@ Please take a moment to provide us with some information about the new game.
   </div>
 <% end %>
 
-<a href='/games'>Home</a>
+<%= link_to "Home", home_path %>

@@ -1,14 +1,24 @@
 <h1>Welcome to Game Arena</h1>
 <p>Your one stop to know everything you wanted to know about PC games.</p>
-<p>Please select a game from below to view its details</p>
-<div>
-  <% @games.each do |game| %>
-  <div><a href="game/<%= game.id.to_s%>"><%= game.name %></a></div>
-  <% end %>
- </div>
-<div>
-  A game that we don't know about? Please, let us <a href="newgame">know.</a>
-</div>
+<% if(@games!=nil && @games.size > 0) %>
+    <p>Please select a game from below to view its details</p>
+    <table>
+      <th width="250" align="left">Name</th>
+      <th width="30" align="left">Rating</th>
+      <th width="30" align="left"></th>
+
+      <% @games.each do |game| %>
+      <tr>
+      <td><%= link_to game.name, game_path(game) %></td>
+      <td><%= game.rating %></td>
+      </tr>
+      <% end %>
+     </table>
+
+<% end %>
+<br>
+A game that we don't know about? Please, let us <%= link_to "know", new_game_path%>
+
 <div>
   This website is designed, developed and maintained by Pradyumna Agrawal (pradyumna@cmu.edu)
 </div>

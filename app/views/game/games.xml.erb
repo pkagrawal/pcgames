@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<games>
+<% if @games != nil && @games.size > 0 %>
+    <% @games.each do |game| %>
+        <game>
+            <id>
+                <%= game.id %>
+            </id>
+            <name>
+                <%= game.name %>
+            </name>
+            <genre>
+                <%= Genre.find(game.genre_id).name %>
+            </genre>
+            <rating>
+                <%= game.rating %>
+            </rating>
+            <votes>
+                <%= game.votes %>
+            </votes>
+            <desc>
+                <%= game.description %>
+            </desc>
+        </game>
+    <% end %>
+<% end %>
+</games>

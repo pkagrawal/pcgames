@@ -1,5 +1,9 @@
 <h1><%=@game.name%></h1>
 <h2>Genre: <%= @genre.name %></h2>
+<h3>Rating: <%= @game.rating %></h3>
+<div id="vote_container"></div><%= form_for(@game, :url => vote_game_path, :remote => true) do |f|%>
+      <%= hidden_field_tag :id, @game.id %>
+      <%= f.submit "Votes" %><% end %>
 <p><%= @game.description %></p>
 <table>
   <% unless @existing_comments.blank? %>
@@ -9,9 +13,23 @@
       <% end %>
   <% end %>
 </table>
+<br><br>
+<div>
+  Would you like to rate this game?
+  <div class="field">
+    <%= form_for(@game, :url => rate_game_path) do |f| %>
+       Rating
+        <%= select_tag :rating, options_for_select([1,2,3,4,5], 3)%>
+        <%= hidden_field_tag :id, @game.id %>
+        <%= f.submit "Rate"%>
+
+        <% end %>
+  </div>
+</div>
+
 <p>Please do leave some comments about this game!</p>
 <p>
-  <%= form_for (@comment) do |f| %>
+  <%= form_for(@comment, :url => create_comment_path) do |f| %>
   <div class="field">
     <%= f.label "Name" %><br />
     <%= f.text_field :user_name %>
@@ -26,5 +44,9 @@
   </div>
 
   <%end%>
-</p>
-<a href="/games">Home</a>
+
+<p>
+Do you want this game? Search for it on <%= link_to "Bestbay", "http://127.0.0.1:3001/search?name=" + @game.name, :target => "_blank" %><br><br>
+
+
+<%= link_to "Home", home_path %>

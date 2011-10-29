@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926163505) do
+ActiveRecord::Schema.define(:version => 20111027032646) do
 
   create_table "comments", :force => true do |t|
     t.integer  "game_id"
@@ -26,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20110926163505) do
     t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "votes",       :default => 0
+    t.float    "rating",      :default => 0.0
   end
 
   create_table "genres", :force => true do |t|
